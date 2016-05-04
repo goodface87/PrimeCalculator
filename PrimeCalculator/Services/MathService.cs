@@ -9,7 +9,7 @@ namespace PrimeCalculator.Services
     public static class MathService
     {
         /// <summary>
-        ///     Will return an array of integers
+        ///     Will return an array of prime numbers from 2 up to the given integer (n)
         /// </summary>
         /// <param name="n"></param>
         /// <returns></returns>
