@@ -7,6 +7,20 @@
     xmlns:ViewModels="using:PrimeCalculator.ViewModels"
     x:Class="PrimeCalculator.MainPage"
     mc:Ignorable="d">
+    <Page.Resources>
+        <DataTemplate x:Key="Int32Template">
+            <Grid Height="50" Width="50
+                  " Margin="10" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="1" Margin="10,0,0,0">
+                    <TextBlock Text="{Binding Mode=OneWay}" Style="{StaticResource TitleTextBlockStyle}"/>
+                </StackPanel>
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
 
     <Page.DataContext>
         <ViewModels:PrimeCalculatorViewModel/>
@@ -17,7 +31,6 @@
             <RowDefinition Height="100"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Ellipse Fill="#FFF4F4F5" Stroke="Black" Grid.Row="1"/>
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="461*"/>
@@ -28,6 +41,7 @@
             <TextBox x:Name="textBox" Grid.Column="1" Margin="10,28,5,36" TextWrapping="Wrap" Text="{Binding maxNumber, Mode=TwoWay}" d:LayoutOverrides="LeftPosition, RightPosition"/>
             <Button x:Name="btnCalculatePrimes" Content="Calculate Primes" Grid.Column="2" Margin="10,28,0,36" VerticalAlignment="Stretch" Width="131"/>
         </Grid>
+        <GridView x:Name="gridView" Grid.Row="1" ItemTemplate="{StaticResource Int32Template}" ItemsSource="{Binding PrimeNumbers}" IsSwipeEnabled="False" SelectionMode="Single" Margin="25,0"/>
 
     </Grid>
 </Page>

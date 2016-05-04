@@ -14,6 +14,15 @@ namespace PrimeCalculator.ViewModels
         public PrimeCalculatorViewModel()
         {
             maxNumber = 8;
+
+            var primeNumbers = new List<int>();
+            for (int i = 2; i < 17; i++)
+            {
+                primeNumbers.Add(i);
+            }
+
+            PrimeNumbers = primeNumbers;
+
         }
     }
 }
