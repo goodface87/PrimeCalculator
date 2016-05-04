@@ -13,30 +13,60 @@ namespace PrimeCalculator.Services
         /// </summary>
         /// <param name="n"></param>
         /// <returns></returns>
-        public static IEnumerable<int> CalculatePrimes(int n)
+        //public static IEnumerable<int> CalculatePrimes(int n)
+        //{
+        //    if (n <= 1) return new int[0];
+        //    var boolArr = new bool[n+1];
+        //    var listOfPrimes = new List<int>();
+        //    var squareRootOfN = Math.Sqrt(n);
+
+        //    for (int i = 2; i <= n; i++)
+        //    {
+        //        if (boolArr[i] == false)
+        //        {
+        //            if (i <= squareRootOfN)
+        //            {
+        //                for (int j = i; j <= n; j += i)
+        //                {
+        //                    boolArr[j] = true;
+        //                }
+        //            }
+        //            listOfPrimes.Add(i);
+        //        } 
+        //    }
+
+        //    return listOfPrimes.ToArray();
+
+        //}
+
+        public static async Task<IEnumerable<int>> CalculatePrimes(int n)
         {
             if (n <= 1) return new int[0];
-            var boolArr = new bool[n+1];
+            var boolArr = new bool[n + 1];
             var listOfPrimes = new List<int>();
             var squareRootOfN = Math.Sqrt(n);
 
-            for (int i = 2; i <= n; i++)
+            return await Task.Run(() =>
             {
-                if (boolArr[i] == false)
-                {
-                    if (i <= squareRootOfN)
-                    {
-                        for (int j = i; j <= n; j += i)
-                        {
-                            boolArr[j] = true;
-                        }
-                    }
-                    listOfPrimes.Add(i);
-                } 
-            }
 
-            return listOfPrimes.ToArray();
-            
+                for (int i = 2; i <= n; i++)
+                {
+                    if (boolArr[i] == false)
+                    {
+                        if (i <= squareRootOfN)
+                        {
+                            for (int j = i; j <= n; j += i)
+                            {
+                                boolArr[j] = true;
+                            }
+                        }
+                        listOfPrimes.Add(i);
+                    }
+                }
+
+                return listOfPrimes.ToArray();
+            });
         }
+
     }
 }
