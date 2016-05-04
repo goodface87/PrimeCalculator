@@ -27,13 +27,13 @@ namespace PrimeCalculator
     {
         public MainPage()
         {
-            var primeCalculatorViewModel = new PrimeCalculatorViewModel();
-            this.DataContext = primeCalculatorViewModel;
+            this.DataContext = new PrimeCalculatorViewModel();
             this.InitializeComponent();
         }
 
         private async void btnCalculatePrimes_Click(object sender, RoutedEventArgs e)
         {
+            if (progressRingCalculatingPrimes.IsActive) return;
             var model = (PrimeCalculatorViewModel)this.DataContext;
             progressRingCalculatingPrimes.IsActive = true;
             model.PrimeNumbers = new ObservableCollection<int>();

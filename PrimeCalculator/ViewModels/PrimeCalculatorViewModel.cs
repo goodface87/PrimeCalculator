@@ -25,27 +25,10 @@ namespace PrimeCalculator.ViewModels
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(PrimeNumbers)));
             }
         }
-
-        public int PrimeNumberCount
-        {
-            get
-            {
-                return _primeNumbers != null ? _primeNumbers.Count() : 3;
-            }
-        }
-
-
-
+        
         public PrimeCalculatorViewModel()
         {
-            //maxNumber = 8;
-
-            PrimeNumbers = new ObservableCollection<int>();
-            //for (int i = 2; i < 97; i++)
-            //{
-            //    PrimeNumbers.Add(i);
-            //}
-
+            PrimeNumbers = new ObservableCollection<int>();  
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
