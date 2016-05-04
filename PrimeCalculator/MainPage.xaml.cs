@@ -35,7 +35,7 @@ namespace PrimeCalculator
         private async void btnCalculatePrimes_Click(object sender, RoutedEventArgs e)
         {
             var model = (PrimeCalculatorViewModel)this.DataContext;
-            var primeNumbers = await MathService.CalculatePrimes(model.maxNumber);
+            var primeNumbers = await MathService.CalculatePrimesAsync(model.maxNumber);
 
             model.PrimeNumbers = new ObservableCollection<int>(primeNumbers);
 

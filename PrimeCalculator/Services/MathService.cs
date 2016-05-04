@@ -39,7 +39,7 @@ namespace PrimeCalculator.Services
 
         //}
 
-        public static async Task<IEnumerable<int>> CalculatePrimes(int n)
+        public static async Task<IEnumerable<int>> CalculatePrimesAsync(int n)
         {
             if (n <= 1) return new int[0];
             var boolArr = new bool[n + 1];
