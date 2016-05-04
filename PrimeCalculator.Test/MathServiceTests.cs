@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
 using PrimeCalculator.Services;
+using System.Linq;
 
 namespace PrimeCalculator.Test
 {
@@ -18,7 +19,7 @@ namespace PrimeCalculator.Test
 
             //assert
             var expected = new int[] { 2, 3, 5, 7 };
-            CollectionAssert.AreEqual(actual, expected);
+            CollectionAssert.AreEqual(actual.ToList(), expected);
         }
 
         [TestMethod]
@@ -32,7 +33,7 @@ namespace PrimeCalculator.Test
 
             //assert
             var expected = new int[] { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29 };
-            CollectionAssert.AreEqual(actual, expected);
+            CollectionAssert.AreEqual(actual.ToList(), expected);
         }
 
         [TestMethod]
@@ -46,7 +47,7 @@ namespace PrimeCalculator.Test
 
             //assert
             var expected = new int[] { };
-            CollectionAssert.AreEqual(actual, expected);
+            CollectionAssert.AreEqual(actual.ToList(), expected);
         }
 
 
@@ -61,7 +62,7 @@ namespace PrimeCalculator.Test
 
             //assert
             var expected = new int[] { };
-            CollectionAssert.AreEqual(actual, expected);
+            CollectionAssert.AreEqual(actual.ToList(), expected);
         }
 
 
@@ -76,7 +77,7 @@ namespace PrimeCalculator.Test
 
             //assert
             var expected = new int[] { 2 };
-            CollectionAssert.AreEqual(actual, expected);
+            CollectionAssert.AreEqual(actual.ToList(), expected);
         }
     }
 

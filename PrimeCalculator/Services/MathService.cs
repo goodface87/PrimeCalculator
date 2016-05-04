@@ -13,7 +13,7 @@ namespace PrimeCalculator.Services
         /// </summary>
         /// <param name="n"></param>
         /// <returns></returns>
-        public static int[] CalculatePrimes(int n)
+        public static IEnumerable<int> CalculatePrimes(int n)
         {
             if (n <= 1) return new int[0];
             var boolArr = new bool[n+1];

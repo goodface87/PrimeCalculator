@@ -1,5 +1,8 @@
-﻿using System;
+﻿using PrimeCalculator.Services;
+using PrimeCalculator.ViewModels;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -24,7 +27,22 @@ namespace PrimeCalculator
     {
         public MainPage()
         {
+            var primeCalculatorViewModel = new PrimeCalculatorViewModel();
+            this.DataContext = primeCalculatorViewModel;
             this.InitializeComponent();
+        }
+
+        private void btnCalculatePrimes_Click(object sender, RoutedEventArgs e)
+        {
+            var model = (PrimeCalculatorViewModel)this.DataContext;
+
+            model.PrimeNumbers = new ObservableCollection<int>(MathService.CalculatePrimes(model.maxNumber));
+
+            //for (int i = 0; i < model.maxNumber && i < 50; i++)
+            //{
+            //    model.PrimeNumbers.Add(model.maxNumber + i);
+            //}
+
         }
     }
 }
