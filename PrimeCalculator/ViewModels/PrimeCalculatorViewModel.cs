@@ -11,6 +11,7 @@ namespace PrimeCalculator.ViewModels
     public class PrimeCalculatorViewModel : INotifyPropertyChanged
     {
         public int maxNumber { get; set; }
+
         private ObservableCollection<int> _primeNumbers;
         public ObservableCollection<int> PrimeNumbers
         {

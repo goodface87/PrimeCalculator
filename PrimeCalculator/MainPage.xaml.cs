@@ -35,16 +35,11 @@ namespace PrimeCalculator
         private async void btnCalculatePrimes_Click(object sender, RoutedEventArgs e)
         {
             var model = (PrimeCalculatorViewModel)this.DataContext;
+            progressRingCalculatingPrimes.IsActive = true;
+            model.PrimeNumbers = new ObservableCollection<int>();
             var primeNumbers = await MathService.CalculatePrimesAsync(model.maxNumber);
-
+            progressRingCalculatingPrimes.IsActive = false;
             model.PrimeNumbers = new ObservableCollection<int>(primeNumbers);
-
-            //model.PrimeNumbers = new ObservableCollection<int>(MathService.CalculatePrimes(model.maxNumber));
-
-            //for (int i = 0; i < model.maxNumber && i < 50; i++)
-            //{
-            //    model.PrimeNumbers.Add(model.maxNumber + i);
-            //}
 
         }
     }

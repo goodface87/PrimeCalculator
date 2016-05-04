@@ -45,6 +45,7 @@
             <StackPanel Grid.Column="3" Orientation="Horizontal">
                 <TextBlock x:Name="textBlock_Copy" TextWrapping="Wrap" Text="{Binding PrimeNumbers.Count, Mode=OneWay}" FontSize="24" Padding="0" Margin="0,30,4,38" d:LayoutOverrides="Height"/>
                 <TextBlock x:Name="textBlock_Copy1" TextWrapping="Wrap" Text="primes listed." FontSize="24" Padding="0" Margin="0,30,0,38" d:LayoutOverrides="Height"/>
+                <ProgressRing x:Name="progressRingCalculatingPrimes" Height="30" Margin="0,30,0,40" Width="35"/>
             </StackPanel>
         </Grid>
         <GridView x:Name="gridView" Grid.Row="2" ItemTemplate="{StaticResource Int32Template}" ItemsSource="{Binding PrimeNumbers, Mode=TwoWay}" IsSwipeEnabled="False" SelectionMode="Single" Margin="0" Padding="25,0,25,10"/>
