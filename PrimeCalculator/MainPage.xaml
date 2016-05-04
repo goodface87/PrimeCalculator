@@ -28,10 +28,11 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="0,0,0,10">
         <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
             <RowDefinition Height="100"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Grid Margin="0">
+        <Grid Grid.Row="1" d:LayoutOverrides="TopPosition, BottomPosition">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="461*"/>
                 <ColumnDefinition Width="199*"/>
@@ -46,7 +47,8 @@
                 <TextBlock x:Name="textBlock_Copy1" TextWrapping="Wrap" Text="primes listed." FontSize="24" Padding="0" Margin="0,30,0,38" d:LayoutOverrides="Height"/>
             </StackPanel>
         </Grid>
-        <GridView x:Name="gridView" Grid.Row="1" ItemTemplate="{StaticResource Int32Template}" ItemsSource="{Binding PrimeNumbers, Mode=TwoWay}" IsSwipeEnabled="False" SelectionMode="Single" Margin="0" Padding="25,0,25,10"/>
+        <GridView x:Name="gridView" Grid.Row="2" ItemTemplate="{StaticResource Int32Template}" ItemsSource="{Binding PrimeNumbers, Mode=TwoWay}" IsSwipeEnabled="False" SelectionMode="Single" Margin="0" Padding="25,0,25,10"/>
+        <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Text="Enter an integer, and it will find the prime numbers up to that given number using the Sieve of Eratosthenes. " HorizontalAlignment="Center" FontSize="22" VerticalAlignment="Center" Margin="10,0"/>
 
     </Grid>
 </Page>
