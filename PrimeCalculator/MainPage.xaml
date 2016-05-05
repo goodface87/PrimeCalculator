@@ -44,7 +44,7 @@
                 <ColumnDefinition Width="80*"/>
             </Grid.ColumnDefinitions>
             <TextBlock x:Name="textBlock" Margin="-23,-15.6,3.6,0" TextWrapping="Wrap" Text="Enter an integer:" FontSize="24" Padding="0" Height="32" Grid.Row="1" VerticalAlignment="Top"/>
-            <TextBox x:Name="textBox" Grid.Column="1" Margin="10.4,-15.6,-7.2,0" TextWrapping="Wrap" Text="{Binding maxNumber, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" d:LayoutOverrides="LeftMargin, RightMargin, LeftPosition, RightPosition" Height="32" Grid.Row="1" VerticalAlignment="Top" Width="100" KeyDown="OnKeyDownHandler" TextChanging="OnTextChangingHandler"/>
+            <TextBox x:Name="textBox" Grid.Column="1" Margin="10.4,-15.6,-7.2,0" TextWrapping="Wrap" Text="{Binding maxNumber, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" d:LayoutOverrides="LeftMargin, RightMargin, LeftPosition, RightPosition" Height="32" Grid.Row="1" VerticalAlignment="Top" Width="130" KeyDown="OnKeyDownHandler" TextChanging="OnTextChangingHandler"/>
             <Button x:Name="btnCalculatePrimes" Content="Get Primes" Grid.Column="2" Margin="10.2,-15.6,-0.2,0" VerticalAlignment="Top" Click="btnCalculatePrimes_Click" HorizontalAlignment="Stretch" d:LayoutOverrides="LeftMargin, RightMargin" Height="32" Grid.Row="1"/>
         </Grid>
         <GridView x:Name="gridView" Grid.Row="3" ItemTemplate="{StaticResource Int32Template}" ItemsSource="{Binding PrimeNumbers, Mode=TwoWay}" IsSwipeEnabled="False" SelectionMode="Single" Padding="25,0,25,10" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin"/>
